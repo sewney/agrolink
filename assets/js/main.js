@@ -8,10 +8,12 @@ let currentUser = JSON.parse(localStorage.getItem('agrolink_user')) || null;
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    // Add this to show default dashboard content
 });
 
 // Initialize Application
 function initializeApp() {
+   
     // Initialize navigation
     initNavigation();
     
@@ -677,10 +679,11 @@ function updateUserState() {
     
     if (user) {
         if (userInfo) {
-            userInfo.innerHTML = `
-                <span>Welcome, ${user.name}</span>
-                <button onclick="logout()" class="btn btn-sm">Logout</button>
-            `;
+           // userInfo.innerHTML = `
+             //   <span>Welcome, ${user.name}</span>
+              //  <button onclick="logout()" class="btn btn-sm">Logout</button> 
+           // `;
+           userInfo.innerHTML = `<span>Welcome, ${user.name}</span>`;
         }
         
         loginLinks.forEach(link => link.style.display = 'none');
