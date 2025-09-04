@@ -14,8 +14,8 @@
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTAgMzBMMjAgMTBMMzAgMzBIMTBaIiBmaWxsPSIjNENBRjUwIi8+CjxwYXRoIGQ9Ik0xNSAyNUwyMCAxNUwyNSAyNUgxNVoiIGZpbGw9IiNGRkZGRkYiLz4KPHRleHQgeD0iMzgiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNENBRjUwIj5BZ3JvTGluazwvdGV4dD4KPC9zdmc+" alt="AgroLink" style="height: 40px;">
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
             </div>
             <div class="nav-actions">
                 <div class="user-info"></div>
@@ -77,8 +77,8 @@
                 
                 <!-- Action Buttons -->
                 <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                    <a href="dashboard_buyer.html" class="btn btn-primary btn-large">📊 View Dashboard</a>
-                    <a href="products.html" class="btn btn-secondary btn-large">🛒 Continue Shopping</a>
+                    <a href="dashboard_buyer.php" class="btn btn-primary btn-large">📊 View Dashboard</a>
+                    <a href="products.php" class="btn btn-secondary btn-large">🛒 Continue Shopping</a>
                     <button onclick="window.print()" class="btn btn-secondary">🖨️ Print Receipt</button>
                 </div>
             </div>
@@ -199,7 +199,7 @@
             if (!orderId) {
                 showNotification('Order not found. Redirecting...', 'error');
                 setTimeout(() => {
-                    window.location.href = 'products.html';
+                    window.location.href = 'products.php';
                 }, 2000);
                 return;
             }
@@ -211,7 +211,7 @@
             if (!order) {
                 showNotification('Order not found. Redirecting...', 'error');
                 setTimeout(() => {
-                    window.location.href = 'products.html';
+                    window.location.href = 'products.php';
                 }, 2000);
                 return;
             }

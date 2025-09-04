@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - AgroLink</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -14,9 +16,9 @@
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTAgMzBMMjAgMTBMMzAgMzBIMTBaIiBmaWxsPSIjNENBRjUwIi8+CjxwYXRoIGQ9Ik0xNSAyNUwyMCAxNUwyNSAyNUgxNVoiIGZpbGw9IiNGRkZGRkYiLz4KPHRleHQgeD0iMzgiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNENBRjUwIj5BZ3JvTGluazwvdGV4dD4KPC9zdmc+" alt="AgroLink" style="height: 40px;">
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html">Cart</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
             </div>
             <div class="nav-actions">
                 <div class="user-info"></div>
@@ -29,7 +31,7 @@
         <div class="container">
             <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">💳 Secure Checkout</h1>
             <p class="text-center text-muted">Complete your order securely</p>
-            
+
             <!-- Checkout Steps -->
             <div style="display: flex; justify-content: center; margin-top: var(--spacing-lg); gap: var(--spacing-lg);">
                 <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
@@ -71,24 +73,24 @@
                                     <input type="text" id="lastName" name="lastName" class="form-control" required>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
                                 <input type="email" id="email" name="email" class="form-control" required>
                                 <div class="form-text">Order confirmation will be sent to this email</div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="phone">Phone Number *</label>
                                 <input type="tel" id="phone" name="phone" class="form-control" required>
                                 <div class="form-text">For delivery coordination</div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="address">Delivery Address *</label>
                                 <textarea id="address" name="address" class="form-control" rows="3" required placeholder="Enter complete address with landmarks"></textarea>
                             </div>
-                            
+
                             <div class="grid grid-2">
                                 <div class="form-group">
                                     <label for="city">City *</label>
@@ -99,7 +101,7 @@
                                     <input type="text" id="postalCode" name="postalCode" class="form-control">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="deliveryInstructions">Special Delivery Instructions</label>
                                 <textarea id="deliveryInstructions" name="deliveryInstructions" class="form-control" rows="2" placeholder="Any special instructions for the delivery person..."></textarea>
@@ -183,9 +185,9 @@
                             <div id="orderItems">
                                 <!-- Will be populated by JavaScript -->
                             </div>
-                            
+
                             <hr style="margin: var(--spacing-lg) 0;">
-                            
+
                             <!-- Order Totals -->
                             <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
                                 <span>Subtotal:</span>
@@ -204,12 +206,12 @@
                                 <span>Total:</span>
                                 <span class="order-total">Rs. 0.00</span>
                             </div>
-                            
+
                             <button type="submit" class="btn btn-primary w-full btn-large mt-lg">
                                 🔒 Place Order Securely
                             </button>
-                            
-                            <a href="cart.html" class="btn btn-secondary w-full mt-md">
+
+                            <a href="cart.php" class="btn btn-secondary w-full mt-md">
                                 ← Back to Cart
                             </a>
                         </div>
@@ -272,7 +274,7 @@
         // Populate order summary
         function populateOrderSummary() {
             const orderItemsContainer = document.getElementById('orderItems');
-            
+
             if (cart.length === 0) {
                 orderItemsContainer.innerHTML = '<p class="text-center text-muted">No items in cart</p>';
                 return;
@@ -314,7 +316,7 @@
             if (cart.length === 0) {
                 showNotification('Your cart is empty. Redirecting to products...', 'warning');
                 setTimeout(() => {
-                    window.location.href = 'products.html';
+                    window.location.href = 'products.php';
                 }, 2000);
                 return;
             }
@@ -334,7 +336,7 @@
         // Handle checkout form submission
         document.getElementById('checkoutForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             if (cart.length === 0) {
                 showNotification('Your cart is empty', 'error');
                 return;
@@ -348,8 +350,8 @@
                 subtotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
                 deliveryFee: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) >= 2500 ? 0 : 150,
                 platformFee: 25,
-                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 
-                       (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) >= 2500 ? 0 : 150) + 25,
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) +
+                    (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) >= 2500 ? 0 : 150) + 25,
                 orderDate: new Date().toISOString(),
                 status: 'pending',
                 paymentMethod: formData.get('paymentMethod')
@@ -357,21 +359,22 @@
 
             // Simulate order processing
             showNotification('Processing your order...', 'info');
-            
+
             setTimeout(() => {
                 // Clear cart
                 cart = [];
                 localStorage.setItem('agrolink_cart', JSON.stringify(cart));
-                
+
                 // Store order
                 const orders = JSON.parse(localStorage.getItem('agrolink_orders')) || [];
                 orders.push(orderData);
                 localStorage.setItem('agrolink_orders', JSON.stringify(orders));
-                
+
                 // Redirect to success page
-                window.location.href = `order_success.html?order=${orderData.id}`;
+                window.location.href = `order_success.php?order=${orderData.id}`;
             }, 2000);
         });
     </script>
 </body>
+
 </html>

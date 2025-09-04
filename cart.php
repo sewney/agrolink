@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - AgroLink</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -14,12 +16,12 @@
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTAgMzBMMjAgMTBMMzAgMzBIMTBaIiBmaWxsPSIjNENBRjUwIi8+CjxwYXRoIGQ9Ik0xNSAyNUwyMCAxNUwyNSAyNUgxNVoiIGZpbGw9IiNGRkZGRkYiLz4KPHRleHQgeD0iMzgiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNENBRjUwIj5BZ3JvTGluazwvdGV4dD4KPC9zdmc+" alt="AgroLink" style="height: 40px;">
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html" class="active">Cart</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php" class="active">Cart</a>
             </div>
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-primary login-link">Login</a>
+                <a href="login.php" class="btn btn-primary login-link">Login</a>
                 <div class="user-info"></div>
             </div>
         </nav>
@@ -73,12 +75,12 @@
                                 <span>Total:</span>
                                 <span class="cart-total">Rs. 0.00</span>
                             </div>
-                            
+
                             <div style="margin-top: var(--spacing-lg);">
-                                <a href="checkout.html" class="btn btn-primary w-full btn-large" id="checkoutBtn">
+                                <a href="checkout.php" class="btn btn-primary w-full btn-large" id="checkoutBtn">
                                     Proceed to Checkout
                                 </a>
-                                <a href="products.html" class="btn btn-secondary w-full mt-md">
+                                <a href="products.php" class="btn btn-secondary w-full mt-md">
                                     Continue Shopping
                                 </a>
                             </div>
@@ -247,7 +249,7 @@
                         <div style="font-size: 4rem; margin-bottom: var(--spacing-md);">🛒</div>
                         <h3>Your cart is empty</h3>
                         <p class="text-muted">Discover fresh produce from local farmers</p>
-                        <a href="products.html" class="btn btn-primary mt-lg">Start Shopping</a>
+                        <a href="products.php" class="btn btn-primary mt-lg">Start Shopping</a>
                     </div>
                 `;
                 updateCartSummary();
@@ -287,8 +289,7 @@
 
         // Add related products to mock data
         function getRelatedProducts() {
-            return [
-                {
+            return [{
                     id: '10',
                     name: 'Fresh Cucumbers',
                     price: 140,
@@ -329,9 +330,11 @@
 
         // Update getMockProducts to include related products
         const originalGetMockProducts = getMockProducts;
+
         function getMockProducts() {
             return [...originalGetMockProducts(), ...getRelatedProducts()];
         }
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <meta name="description" content="A centralized digital marketplace that connects farmers, buyers, and transporters to streamline agricultural trade in Sri Lanka.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -25,7 +27,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-secondary login-link">Login</a>
+                <a href="login.php" class="btn btn-secondary login-link">Login</a>
                 <a href="#register" class="btn btn-primary" data-modal="registerModal">Register</a>
             </div>
         </nav>
@@ -38,7 +40,7 @@
                 <h1>Trade Smarter. Deliver Faster.</h1>
                 <p>A centralized digital marketplace that connects farmers, buyers, and transporters to streamline agricultural trade.</p>
                 <div class="hero-actions">
-                    <a href="login.html" class="btn btn-primary btn-large"> Login</a>
+                    <a href="login.php" class="btn btn-primary btn-large"> Login</a>
                     <a href="#register" class="btn btn-secondary btn-large" data-modal="registerModal"> Register Now</a>
                 </div>
             </div>
@@ -118,7 +120,7 @@
                         <li>Track sales & payments</li>
                         <li>Connect directly with buyers</li>
                     </ul>
-                    <a href="register_farmer.html" class="btn btn-primary mt-md">Register as Farmer</a>
+                    <a href="register_farmer.php" class="btn btn-primary mt-md">Register as Farmer</a>
                 </div>
                 <div class="role-card">
                     <div class="role-icon">
@@ -131,7 +133,7 @@
                         <li>Track deliveries</li>
                         <li>Request specific crops</li>
                     </ul>
-                    <a href="register_buyer.html" class="btn btn-primary mt-md">Register as Buyer</a>
+                    <a href="register_buyer.php" class="btn btn-primary mt-md">Register as Buyer</a>
                 </div>
                 <div class="role-card">
                     <div class="role-icon">
@@ -143,9 +145,9 @@
                         <li>Update delivery status</li>
                         <li>Earn more with reliable clients</li>
                     </ul>
-                    <a href="register_transporter.html" class="btn btn-primary mt-md">Register as Transporter</a>
+                    <a href="register_transporter.php" class="btn btn-primary mt-md">Register as Transporter</a>
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- Testimonials Section -->
@@ -231,7 +233,7 @@
                             <textarea id="contactMessage" name="message" class="form-control" rows="4" required></textarea>
                         </div>
                         <div style="text-align: center;">
-                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                         </div>
                     </form>
                 </div>
@@ -254,14 +256,14 @@
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#features">Features</a>
-                    <a href="products.html">Browse Products</a>
+                    <a href="products.php">Browse Products</a>
                 </div>
                 <div class="footer-section">
                     <h3>Users</h3>
-                    <a href="register_farmer.html">Register as Farmer</a>
-                    <a href="register_buyer.html">Register as Buyer</a>
-                    <a href="register_transporter.html">Register as Transporter</a>
-                    <a href="login.html">Login</a>
+                    <a href="register_farmer.php">Register as Farmer</a>
+                    <a href="register_buyer.php">Register as Buyer</a>
+                    <a href="register_transporter.php">Register as Transporter</a>
+                    <a href="login.php">Login</a>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
@@ -279,41 +281,41 @@
 
     <!-- Registration Modal -->
     <div id="registerModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title">Create AgroLink Account</h3>
-            <button class="modal-close">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p class="modal-desc">
-                Select your role to get started with AgroLink:
-            </p>
-            <div class="grid grid-3 mt-lg register-cards">
-                <a href="register_farmer.html" class="card text-center register-card">
-                    <div class="card-icon">
-                        <img src="assets/img/farmer-icon.png" alt="Farmer" class="register-icon">
-                    </div>
-                    <h4 class="register-title">Farmer</h4>
-                    <p class="register-desc">List and sell your produce directly to buyers.</p>
-                </a>
-                <a href="register_buyer.html" class="card text-center register-card">
-                    <div class="card-icon">
-                        <img src="assets/img/buyer-icon.png" alt="Buyer" class="register-icon">
-                    </div>
-                    <h4 class="register-title">Buyer</h4>
-                    <p class="register-desc">Purchase fresh produce from trusted farmers.</p>
-                </a>
-                <a href="register_transporter.html" class="card text-center register-card">
-                    <div class="card-icon">
-                        <img src="assets/img/transporter-icon.png" alt="Transporter" class="register-icon">
-                    </div>
-                    <h4 class="register-title">Transporter</h4>
-                    <p class="register-desc">Provide reliable delivery and logistics services.</p>
-                </a>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create AgroLink Account</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc">
+                    Select your role to get started with AgroLink:
+                </p>
+                <div class="grid grid-3 mt-lg register-cards">
+                    <a href="register_farmer.php" class="card text-center register-card">
+                        <div class="card-icon">
+                            <img src="assets/img/farmer-icon.png" alt="Farmer" class="register-icon">
+                        </div>
+                        <h4 class="register-title">Farmer</h4>
+                        <p class="register-desc">List and sell your produce directly to buyers.</p>
+                    </a>
+                    <a href="register_buyer.php" class="card text-center register-card">
+                        <div class="card-icon">
+                            <img src="assets/img/buyer-icon.png" alt="Buyer" class="register-icon">
+                        </div>
+                        <h4 class="register-title">Buyer</h4>
+                        <p class="register-desc">Purchase fresh produce from trusted farmers.</p>
+                    </a>
+                    <a href="register_transporter.php" class="card text-center register-card">
+                        <div class="card-icon">
+                            <img src="assets/img/transporter-icon.png" alt="Transporter" class="register-icon">
+                        </div>
+                        <h4 class="register-title">Transporter</h4>
+                        <p class="register-desc">Provide reliable delivery and logistics services.</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="assets/js/main.js"></script>
     <script>

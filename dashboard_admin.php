@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - AgroLink</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -45,7 +47,7 @@
             <!-- Dashboard Overview -->
             <div id="dashboard-section" class="content-section">
                 <h1 style="margin-bottom: var(--spacing-lg);">System Overview</h1>
-                
+
                 <!-- Key Metrics -->
                 <div class="dashboard-stats">
                     <div class="stat-card">
@@ -108,7 +110,7 @@
                             <!-- Recent orders will be populated by JavaScript -->
                         </div>
                     </div>
-                    
+
                     <div class="card">
                         <div style="padding: var(--spacing-lg); border-bottom: 1px solid var(--medium-gray);">
                             <h3>👥 New User Registrations</h3>
@@ -864,7 +866,7 @@
                             <input type="email" id="userEmail" name="email" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="grid grid-2">
                         <div class="form-group">
                             <label for="userRole">Role *</label>
@@ -881,12 +883,12 @@
                             <input type="tel" id="userPhone" name="phone" class="form-control">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="userLocation">Location</label>
                         <input type="text" id="userLocation" name="location" class="form-control">
                     </div>
-                    
+
                     <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg);">
                         <button type="submit" class="btn btn-primary">Add User</button>
                         <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
@@ -909,12 +911,12 @@
                         <label for="notificationTitle">Title *</label>
                         <input type="text" id="notificationTitle" name="title" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="notificationMessage">Message *</label>
                         <textarea id="notificationMessage" name="message" class="form-control" rows="4" required></textarea>
                     </div>
-                    
+
                     <div class="grid grid-2">
                         <div class="form-group">
                             <label for="notificationRecipient">Recipient *</label>
@@ -938,7 +940,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg);">
                         <button type="submit" class="btn btn-primary">Send Notification</button>
                         <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
@@ -963,7 +965,7 @@
             } else if (document.getElementById('adminName')) {
                 document.getElementById('adminName').textContent = 'Admin';
             }
-            
+
             loadDashboardData();
             loadUsers();
             loadOrders();
@@ -980,7 +982,7 @@
                     e.preventDefault();
                     const section = this.getAttribute('data-section');
                     showSection(section);
-                    
+
                     menuLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -991,12 +993,12 @@
         function showSection(sectionName) {
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.style.display = 'none');
-            
+
             const targetSection = document.getElementById(sectionName + '-section');
             if (targetSection) {
                 targetSection.style.display = 'block';
             }
-            
+
             const menuLinks = document.querySelectorAll('.menu-link');
             menuLinks.forEach(link => {
                 link.classList.remove('active');
@@ -1017,13 +1019,13 @@
             document.getElementById('totalUsers').textContent = '247';
             document.getElementById('activeOrders').textContent = '18';
             document.getElementById('totalRevenue').textContent = 'Rs. 1,245,500';
-            
+
             // User counts by role
             document.getElementById('farmerCount').textContent = '89';
             document.getElementById('buyerCount').textContent = '134';
             document.getElementById('transporterCount').textContent = '21';
             document.getElementById('adminCount').textContent = '3';
-            
+
             // Recent orders
             document.getElementById('recentOrders').innerHTML = `
                 <div style="margin-bottom: var(--spacing-sm); padding-bottom: var(--spacing-sm); border-bottom: 1px solid var(--light-gray);">
@@ -1037,7 +1039,7 @@
                     <span class="badge badge-warning">Processing</span>
                 </div>
             `;
-            
+
             // New registrations
             document.getElementById('newRegistrations').innerHTML = `
                 <div style="margin-bottom: var(--spacing-sm); padding-bottom: var(--spacing-sm); border-bottom: 1px solid var(--light-gray);">
@@ -1093,7 +1095,7 @@
             document.getElementById('processingOrdersCount').textContent = '8';
             document.getElementById('completedOrdersCount').textContent = '234';
             document.getElementById('averageOrderValue').textContent = 'Rs. 1,250';
-            
+
             const tbody = document.getElementById('ordersTableBody');
             tbody.innerHTML = `
                 <tr>
@@ -1130,12 +1132,12 @@
             document.getElementById('activeProducts').textContent = '142';
             document.getElementById('outOfStock').textContent = '8';
             document.getElementById('pendingApproval').textContent = '6';
-            
+
             // Category counts
             document.getElementById('vegetableCount').textContent = '89';
             document.getElementById('fruitCount').textContent = '34';
             document.getElementById('grainCount').textContent = '23';
-            
+
             const tbody = document.getElementById('productsTableBody');
             tbody.innerHTML = `
                 <tr>
@@ -1169,7 +1171,7 @@
                     loadUsers();
                 });
             }
-            
+
             // Send notification form
             const sendNotificationForm = document.getElementById('sendNotificationForm');
             if (sendNotificationForm) {
@@ -1180,7 +1182,7 @@
                     this.reset();
                 });
             }
-            
+
             // Settings forms
             const platformSettingsForm = document.getElementById('platformSettingsForm');
             if (platformSettingsForm) {
@@ -1240,9 +1242,9 @@
                 'cache': 'Clearing cache...',
                 'maintenance': 'Enabling maintenance mode...'
             };
-            
+
             showNotification?.(actions[type], 'info');
-            
+
             setTimeout(() => {
                 showNotification?.(`${type} completed successfully!`, 'success');
             }, 2000);
@@ -1279,4 +1281,5 @@
         }
     </script>
 </body>
+
 </html>
