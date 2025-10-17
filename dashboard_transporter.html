@@ -4,38 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transporter Dashboard - AgroLink</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTAgMzBMMjAgMTBMMzAgMzBIMTBaIiBmaWxsPSIjNENBRjUwIi8+CjxwYXRoIGQ9Ik0xNSAyNUwyMCAxNUwyNSAyNUgxNVoiIGZpbGw9IiNGRkZGRkYiLz4KPHRleHQgeD0iMzgiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNENBRjUwIj5BZ3JvTGluazwvdGV4dD4KPC9zdmc+" alt="AgroLink" style="height: 40px;">
-            </div>
-            <div class="nav-actions">
-                <div class="user-info">
-                    <span>Welcome, <span id="transporterName">Transporter</span></span>
-                    <button onclick="logout()" class="btn btn-sm">Logout</button>
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="logo-section">
+            <img src="assets/img/Logo.png" alt="AgroLink">
+        </div>
+        <div class="user-section">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">TR</div>
+                <div class="user-details">
+                    <div class="user-name" id="transporterName">Transporter</div>
+                    <div class="user-role">Transporter</div>
                 </div>
             </div>
-        </nav>
-    </header>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
 
     <!-- Dashboard Layout -->
     <div class="dashboard">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h3 style="margin-bottom: var(--spacing-lg); color: var(--primary-green);">🚚 Transporter Dashboard</h3>
+            <div class="sidebar-header">
+                <h3 class="sidebar-title">Transporter Dashboard</h3>
+            </div>
             <ul class="sidebar-menu">
-                <li><a href="#dashboard" class="menu-link active" data-section="dashboard">📊 Dashboard</a></li>
-                <li><a href="#available" class="menu-link" data-section="available">📋 Available Deliveries</a></li>
-                <li><a href="#mydeliveries" class="menu-link" data-section="mydeliveries">🚛 My Deliveries</a></li>
-                <li><a href="#schedule" class="menu-link" data-section="schedule">📅 Schedule</a></li>
-                <li><a href="#earnings" class="menu-link" data-section="earnings">💰 Earnings</a></li>
-                <li><a href="#vehicle" class="menu-link" data-section="vehicle">🚗 Vehicle Management</a></li>
-                <li><a href="#profile" class="menu-link" data-section="profile">👤 Profile</a></li>
-                <li><a href="#analytics" class="menu-link" data-section="analytics">📈 Analytics</a></li>
+                <li><a href="#dashboard" class="menu-link active" data-section="dashboard">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    Dashboard
+                </a></li>
+                <li><a href="#available" class="menu-link" data-section="available">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <line x1="7" y1="8" x2="17" y2="8"/>
+                            <line x1="7" y1="12" x2="17" y2="12"/>
+                        </svg>
+                    </div>
+                    Available
+                </a></li>
+                <li><a href="#mydeliveries" class="menu-link" data-section="mydeliveries">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7h13v10H3z"/>
+                            <path d="M16 10h4l3 3v4h-7z"/>
+                        </svg>
+                    </div>
+                    My Deliveries
+                </a></li>
+                <li><a href="#schedule" class="menu-link" data-section="schedule">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    Schedule
+                </a></li>
+                <li><a href="#earnings" class="menu-link" data-section="earnings">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="8"/>
+                            <line x1="12" y1="8" x2="12" y2="16"/>
+                            <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                    </div>
+                    Earnings
+                </a></li>
+                <li><a href="#vehicle" class="menu-link" data-section="vehicle">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="6" rx="2"/>
+                            <path d="M7 11V7h6v4"/>
+                            <circle cx="7.5" cy="17.5" r="1.5"/>
+                            <circle cx="16.5" cy="17.5" r="1.5"/>
+                        </svg>
+                    </div>
+                    Vehicle
+                </a></li>
+                <li><a href="#profile" class="menu-link" data-section="profile">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    Profile
+                </a></li>
+                <li><a href="#analytics" class="menu-link" data-section="analytics">
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="20" x2="12" y2="10"/>
+                            <line x1="18" y1="20" x2="18" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    Analytics
+                </a></li>
             </ul>
         </aside>
 
@@ -316,9 +393,9 @@
                                 </div>
                                 <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
                                     <span>Express Delivery:</span>
-                                    <span style="font-weight: var,--font-weight-bold);">Rs. 1,150</span>
+                                    <span style="font-weight: var(--font-weight-bold);">Rs. 1,150</span>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: var,--spacing-xs);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
                                     <span>Rating Bonus:</span>
                                     <span style="font-weight: var(--font-weight-bold);">Rs. 500</span>
                                 </div>
@@ -349,7 +426,7 @@
                                     <span>On-Time Delivery:</span>
                                     <span style="font-weight: var(--font-weight-bold);">95%</span>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: var,--spacing-sm);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
                                     <span>Customer Satisfaction:</span>
                                     <span style="font-weight: var(--font-weight-bold);">98%</span>
                                 </div>
@@ -657,7 +734,7 @@
                         <div style="padding: var(--spacing-lg); border-bottom: 1px solid var(--medium-gray);">
                             <h3>📊 Monthly Performance</h3>
                         </div>
-                        <div style="padding: var(--spacing-xl); text-center; color: var(--dark-gray);">
+                        <div style="padding: var(--spacing-xl); text-align: center; color: var(--dark-gray);">
                             <div style="font-size: 4rem; margin-bottom: var(--spacing-md);">📈</div>
                             <p>Monthly delivery and earnings chart</p>
                         </div>
@@ -667,7 +744,7 @@
                         <div style="padding: var(--spacing-lg); border-bottom: 1px solid var(--medium-gray);">
                             <h3>🗺️ Popular Routes</h3>
                         </div>
-                        <div style="padding: var(--spacing-xl); text-center; color: var(--dark-gray);">
+                        <div style="padding: var(--spacing-xl); text-align: center; color: var(--dark-gray);">
                             <div style="font-size: 4rem; margin-bottom: var(--spacing-md);">🗺️</div>
                             <p>Most frequent delivery routes</p>
                         </div>
@@ -736,6 +813,16 @@
 
     <script src="assets/js/main.js"></script>
     <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('user_id');
+                localStorage.removeItem('user_email');
+                localStorage.removeItem('user_role');
+                localStorage.removeItem('user_name');
+                localStorage.removeItem('business_name');
+                window.location.href = 'auth/logout.php';
+            }
+        }
         // Remove authentication check to allow dashboard access without login
         document.addEventListener('DOMContentLoaded', function() {
             initTransporterDashboard();
@@ -761,6 +848,8 @@
             
             // Set up CSS for tabs
             addTabStyles();
+            // Show dashboard section by default
+            showSection('dashboard');
         }
 
         // Navigation setup (reuse from farmer dashboard)
